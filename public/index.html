@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Filomena | Café de Especialidad y Cápsulas en Salta</title>
-    <meta name="description" content="Boutique de café en Salta. Venta de cápsulas compatibles Nespresso y Dolce Gusto, suscripciones mensuales de café de especialidad y soluciones para empresas en Salta.">
+    <meta name="description" content="Boutique de café en Salta. Venta de cápsulas compatibles Nespresso y Dolce Gusto, máquinas y café de especialidad. Envíos en Salta y local en Shopping Alto Noa.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +19,7 @@
                         brandBlack: '#1a1a1a',
                         brandGold: '#C5A059',
                         brandCream: '#F5F5DC',
+                        brandTerracotta: '#8E3A3A',
                         actionGreen: '#25D366',
                     },
                     fontFamily: {
@@ -30,69 +31,64 @@
             }
         }
     </script>
-    
     <style>
         html { scroll-behavior: smooth; }
         .bg-coffee-pattern {
             background-image: url('https://images.unsplash.com/photo-1447933601403-0c6688de566e?q=80&w=2561&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-size: cover; background-position: center; background-attachment: fixed;
         }
-        .whatsapp-float {
-            position: fixed; bottom: 30px; right: 30px; z-index: 100;
-        }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; z-index: 100; transition: all 0.3s ease; }
     </style>
 </head>
 <body class="bg-brandBlack text-brandCream font-sans antialiased">
 
-    <a href="https://wa.me/5493872116519" target="_blank" aria-label="Escribinos por WhatsApp" class="whatsapp-float bg-actionGreen rounded-full p-4 shadow-lg hover:scale-110 transition-transform">
+    <a href="https://wa.me/5493872116519" target="_blank" class="whatsapp-float bg-actionGreen rounded-full p-4 shadow-lg flex items-center justify-center hover:scale-110">
         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
     <nav class="fixed w-full z-50 bg-brandBlack/95 border-b border-brandGold/20 backdrop-blur-sm">
         <div class="max-w-7xl mx-auto px-4 h-20 flex justify-between items-center">
             <div class="flex items-center gap-3">
-               <img src="./logo_v2.png" alt="La Filomena Logo" class="h-10 w-auto rounded-full">
-               <span class="font-display text-xl md:text-2xl font-bold text-brandGold tracking-widest uppercase">La Filomena</span>
+               <img src="./logo_v2.png" alt="Logo" class="h-10 w-auto rounded-full">
+               <span class="font-display text-xl font-bold text-brandGold tracking-widest uppercase">La Filomena</span>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
+                <a href="#experiencia" class="hover:text-brandGold text-sm uppercase">Cápsulas</a>
                 <a href="#suscripcion" class="hover:text-brandGold text-sm uppercase">Suscripción</a>
                 <a href="#empresas" class="hover:text-brandGold text-sm uppercase">Empresas</a>
-                <a href="#ubicacion" class="hover:text-brandGold text-sm uppercase">Ubicación</a>
-                <a href="https://lafilomena.store" target="_blank" class="bg-brandGold text-brandBlack px-6 py-2 rounded-sm font-bold text-xs">Tienda Online</a>
+                <a href="#donde-estamos" class="hover:text-brandGold text-sm uppercase">Ubicación</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative min-h-screen flex items-center justify-center bg-coffee-pattern text-center px-4">
+    <header class="relative min-h-screen flex items-center justify-center bg-coffee-pattern">
         <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 max-w-4xl">
-            <h1 class="font-display text-4xl md:text-7xl font-bold text-white mb-6 uppercase tracking-tighter">Tu Momento de Café <br><span class="italic font-serif text-brandGold font-normal capitalize">en Salta</span></h1>
-            <p class="text-gray-200 text-lg md:text-xl mb-10 max-w-2xl mx-auto">Experiencia boutique en cápsulas y granos seleccionados para tu hogar u oficina.</p>
-            <div class="flex flex-col md:flex-row gap-5 justify-center">
+        <div class="relative z-10 text-center px-4 max-w-4xl">
+            <img src="./logo_v2.png" alt="Logo" class="h-32 mx-auto mb-6 rounded-full border-2 border-brandGold">
+            <h1 class="font-display text-4xl md:text-7xl font-bold text-white mb-6 uppercase tracking-tighter">Café de Especialidad <br><span class="italic font-serif text-brandGold font-normal">en Salta</span></h1>
+            <div class="flex flex-col md:flex-row gap-5 justify-center mt-10">
                 <a href="#suscripcion" class="px-8 py-3 bg-brandCream text-brandBlack font-bold uppercase text-xs">Suscripción Hogar</a>
-                <a href="#empresas" class="px-8 py-3 bg-brandGold text-brandBlack font-bold uppercase text-xs">Servicio Empresas</a>
+                <a href="#empresas" class="px-8 py-3 bg-brandGold text-brandBlack font-bold uppercase text-xs">Soluciones Empresas</a>
             </div>
         </div>
     </header>
 
-    <section id="capsulas" class="py-20 bg-brandCream text-brandBlack text-center">
+    <section id="experiencia" class="py-20 bg-brandCream text-brandBlack text-center">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="font-display text-3xl md:text-4xl font-bold mb-4 uppercase">Cápsulas de Café en Salta</h2>
-            <p class="text-gray-600 mb-12">Variedad exclusiva compatible con Nespresso® y Dolce Gusto®.</p>
+            <div class="w-24 h-1 bg-brandGold mx-auto mb-12"></div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 border border-brandGold/30">
-                    <h3 class="font-display text-xl font-bold mb-2">Variedades Gourmet</h3>
-                    <p class="text-sm">Desde intensos italianos hasta sabores exóticos como Vainilla y Caramelo.</p>
+                <div class="bg-white p-8 shadow-md border-b-4 border-brandGold">
+                    <h3 class="font-display text-xl font-bold mb-2">Sabores Exóticos</h3>
+                    <p class="text-gray-600 text-sm">Pistacho, Crème Brûlée y más opciones gourmet.</p>
                 </div>
-                <div class="p-8 border border-brandGold/30">
-                    <h3 class="font-display text-xl font-bold mb-2">Café de Especialidad</h3>
-                    <p class="text-sm">Granos de origen seleccionados para los paladares más exigentes de Salta.</p>
+                <div class="bg-white p-8 shadow-md border-b-4 border-brandBlack">
+                    <h3 class="font-display text-xl font-bold mb-2">Compatibilidad</h3>
+                    <p class="text-gray-600 text-sm">Para máquinas Nespresso® y Dolce Gusto®.</p>
                 </div>
-                <div class="p-8 border border-brandGold/30">
-                    <h3 class="font-display text-xl font-bold mb-2">Accesorios y Máquinas</h3>
-                    <p class="text-sm">Todo lo necesario para montar tu rincón de café profesional.</p>
+                <div class="bg-white p-8 shadow-md border-b-4 border-brandGold">
+                    <h3 class="font-display text-xl font-bold mb-2">Máquinas 3 en 1</h3>
+                    <p class="text-gray-600 text-sm">Cápsulas o café molido en un solo equipo.</p>
                 </div>
             </div>
         </div>
@@ -101,28 +97,35 @@
     <section id="suscripcion" class="py-20 bg-white text-brandBlack">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="font-display text-3xl md:text-4xl font-bold mb-6 uppercase">Tu Café Favorito, Mes a Mes</h2>
-                <p class="text-lg mb-6">Queremos que nunca te falte ese momento especial. Te brindamos un <strong>asesoramiento personalizado</strong> para encontrar el perfil de café que más se ajusta a tus gustos y te enviamos la oferta ideal mes a mes.</p>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-start"><span class="text-brandGold font-bold mr-3">✓</span> Asesoramiento experto para descubrir tu café ideal.</li>
-                    <li class="flex items-start"><span class="text-brandGold font-bold mr-3">✓</span> Planes flexibles ajustados a tu consumo mensual.</li>
-                    <li class="flex items-start"><span class="text-brandGold font-bold mr-3">✓</span> Entrega programada en la comodidad de tu casa.</li>
-                </ul>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://wa.me/5493872116519" class="inline-flex items-center gap-2 bg-actionGreen text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition-all">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        Escribinos por WhatsApp
-                    </a>
+                <span class="text-brandGold font-bold uppercase tracking-widest text-sm">Tu café, siempre listo</span>
+                <h2 class="font-display text-3xl md:text-5xl font-bold mt-4 mb-6 uppercase">Suscripción para el Hogar</h2>
+                <p class="text-gray-600 mb-6 text-lg">Queremos que nunca te falte tu momento favorito. Te asesoramos personalmente para encontrar el café que mejor se adapte a tus gustos y te enviamos mes a mes tu selección preferida directamente a tu casa en Salta.</p>
+                
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start">
+                        <div class="bg-brandGold/10 p-2 rounded mr-4 text-brandGold">★</div>
+                        <p><strong>Asesoramiento experto:</strong> Encontramos tu perfil de sabor ideal.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="bg-brandGold/10 p-2 rounded mr-4 text-brandGold">★</div>
+                        <p><strong>Comodidad total:</strong> Envío mensual programado.</p>
+                    </div>
                 </div>
+
+                <a href="https://wa.me/5493872116519?text=Hola!%20Quiero%20información%20sobre%20la%20suscripción%20para%20el%20hogar" target="_blank" class="inline-flex items-center gap-2 bg-actionGreen text-white px-6 py-3 rounded-sm font-bold uppercase text-sm hover:opacity-90">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Consultar por WhatsApp
+                </a>
             </div>
-            <div class="bg-brandBlack text-brandCream p-8 rounded-sm shadow-xl">
-                <h3 class="text-xl font-display mb-6 uppercase tracking-wider">Solicitar Asesoramiento</h3>
+            
+            <div class="bg-brandCream p-8 rounded-sm shadow-xl">
+                <h3 class="font-display text-2xl mb-6 uppercase font-bold text-center">Unirme a la Suscripción</h3>
                 <form id="b2cForm" class="space-y-4">
-                    <input type="text" name="nombre" required placeholder="Tu Nombre" class="w-full bg-white/10 border border-gray-700 p-3 outline-none focus:border-brandGold">
-                    <input type="email" name="email" required placeholder="Tu Email" class="w-full bg-white/10 border border-gray-700 p-3 outline-none focus:border-brandGold">
-                    <input type="tel" name="telefono" required placeholder="Tu WhatsApp" class="w-full bg-white/10 border border-gray-700 p-3 outline-none focus:border-brandGold">
-                    <button type="submit" class="w-full bg-brandGold text-brandBlack font-bold py-3 uppercase hover:bg-brandCream transition-colors">Quiero mi Suscripción</button>
-                    <p id="msgB2C" class="hidden text-center text-sm mt-2 font-bold"></p>
+                    <input name="nombre" type="text" required class="w-full bg-white border border-gray-300 px-4 py-3" placeholder="Tu nombre">
+                    <input name="email" type="email" required class="w-full bg-white border border-gray-300 px-4 py-3" placeholder="Tu email">
+                    <input name="telefono" type="tel" required class="w-full bg-white border border-gray-300 px-4 py-3" placeholder="Teléfono / WhatsApp">
+                    <button type="submit" class="w-full bg-brandBlack text-white font-bold py-4 uppercase hover:bg-brandGold transition-colors">Solicitar Asesoramiento</button>
+                    <p id="msgB2C" class="hidden text-center font-bold mt-2"></p>
                 </form>
             </div>
         </div>
@@ -130,47 +133,51 @@
 
     <section id="empresas" class="py-20 bg-brandBlack">
         <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="order-2 lg:order-1 bg-white/5 border border-white/10 p-8 rounded-sm">
+            <div>
+                <h2 class="font-display text-3xl md:text-5xl text-white mb-6 uppercase font-bold">Café para <span class="text-brandGold">Empresas</span></h2>
+                <p class="text-gray-400 mb-8 text-lg">Soluciones integrales de café para oficinas, hoteles y locales comerciales en Salta.</p>
+                <ul class="space-y-4 text-gray-300 mb-8">
+                    <li class="flex items-center"><span class="text-brandGold mr-3 font-bold text-xl">✓</span> Máquinas incluidas en comodato.</li>
+                    <li class="flex items-center"><span class="text-brandGold mr-3 font-bold text-xl">✓</span> Abastecimiento mensual garantizado.</li>
+                    <li class="flex items-center"><span class="text-brandGold mr-3 font-bold text-xl">✓</span> Soporte técnico y capacitación.</li>
+                </ul>
+                <a href="https://wa.me/5493872116519?text=Hola!%20Quiero%20una%20propuesta%20corporativa%20para%20mi%20empresa" target="_blank" class="inline-flex items-center gap-2 bg-actionGreen text-white px-6 py-3 rounded-sm font-bold uppercase text-sm hover:opacity-90">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp Corporativo
+                </a>
+            </div>
+            
+            <div class="bg-white/5 border border-white/10 p-8 rounded-sm">
                 <h3 class="font-display text-2xl text-white mb-6 uppercase">Propuesta Corporativa</h3>
                 <form id="b2bForm" class="space-y-4">
-                    <input type="text" name="contacto" required placeholder="Nombre de Contacto" class="w-full bg-black/20 border border-gray-700 text-white p-3 outline-none focus:border-brandGold">
-                    <input type="text" name="empresa" required placeholder="Nombre de la Empresa" class="w-full bg-black/20 border border-gray-700 text-white p-3 outline-none focus:border-brandGold">
-                    <input type="tel" name="telefono" required placeholder="Teléfono de Contacto" class="w-full bg-black/20 border border-gray-700 text-white p-3 outline-none focus:border-brandGold">
-                    <textarea name="mensaje" placeholder="¿Cuántas personas integran tu equipo?" class="w-full bg-black/20 border border-gray-700 text-white p-3 outline-none focus:border-brandGold h-24"></textarea>
-                    <button type="submit" class="w-full bg-brandGold text-brandBlack font-bold py-3 uppercase hover:bg-brandCream transition-colors">Solicitar Presupuesto</button>
-                    <p id="msgB2B" class="hidden text-center text-sm mt-2 font-bold"></p>
+                    <input name="nombre" type="text" required class="w-full bg-black/40 border border-gray-700 text-white px-4 py-3" placeholder="Tu Nombre">
+                    <input name="empresa" type="text" required class="w-full bg-black/40 border border-gray-700 text-white px-4 py-3" placeholder="Nombre de la Empresa">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input name="email" type="email" required class="w-full bg-black/40 border border-gray-700 text-white px-4 py-3" placeholder="Email corporativo">
+                        <input name="telefono" type="tel" required class="w-full bg-black/40 border border-gray-700 text-white px-4 py-3" placeholder="Teléfono">
+                    </div>
+                    <textarea name="mensaje" rows="3" class="w-full bg-black/40 border border-gray-700 text-white px-4 py-3" placeholder="¿Qué solución necesitás?"></textarea>
+                    <button type="submit" class="w-full bg-brandGold text-brandBlack font-bold py-4 uppercase hover:bg-white transition-colors">Contactar</button>
+                    <p id="msgB2B" class="hidden text-center font-bold mt-2"></p>
                 </form>
             </div>
-            <div class="order-1 lg:order-2">
-                <h2 class="font-display text-3xl md:text-4xl text-white mb-6 uppercase">Café para Empresas en Salta</h2>
-                <p class="text-gray-400 mb-8 text-lg">Elevá la productividad de tu oficina con el mejor café. Ofrecemos comodato de máquinas, servicio técnico y provisión constante para empresas.</p>
-                <div class="flex flex-col gap-4">
-                    <p class="text-brandGold font-bold uppercase tracking-widest text-sm">¿Prefieres atención inmediata?</p>
-                    <a href="https://wa.me/5493872116519" class="inline-flex items-center gap-2 bg-actionGreen text-white px-8 py-3 rounded-full font-bold w-fit hover:scale-105 transition-transform">
-                        <span>Consultar por WhatsApp</span>
-                    </a>
-                </div>
+        </div>
+    </section>
+
+    <section id="donde-estamos" class="py-20 bg-white text-brandBlack">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="font-display text-3xl font-bold mb-4 uppercase">Visitá nuestro Local en Salta</h2>
+            <p class="mb-8 text-gray-600">Shopping Alto Noa - Av. Bicentenario de la Batalla de Salta 702</p>
+            <div class="w-full h-[450px] rounded-sm overflow-hidden shadow-2xl border border-gray-200">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.5649938634814!2d-65.40740942371905!3d-24.776159677983944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3bc4e7a760b%3A0x6b04294d3393b397!2sAlto%20Noa!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <section id="ubicacion" class="py-20 bg-white text-brandBlack border-t border-brandGold/10">
+    <footer class="bg-black text-white border-t border-white/10 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="font-display text-3xl font-bold mb-4 uppercase">Visitá nuestra Boutique en Salta</h2>
-            <p class="mb-8 font-serif italic text-lg">Shopping Alto Noa - Av. Bicentenario de la Batalla de Salta 702</p>
-            <div class="w-full h-[450px] rounded-lg overflow-hidden shadow-2xl border-4 border-brandGold/10">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.5023447167667!2d-65.4055274!3d-24.7782346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3970b561c21%3A0x6762c43cf305f884!2sAlto%20Noa!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-black text-white py-12 border-t border-brandGold/20">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="font-display text-brandGold mb-4 tracking-widest text-xl uppercase">La Filomena</p>
-            <p class="text-xs text-gray-500 max-w-md mx-auto">Nespresso® y Dolce Gusto® son marcas registradas de terceros. La Filomena no tiene vinculación con las mismas.</p>
+            <p class="font-display text-brandGold mb-4 tracking-widest uppercase">La Filomena</p>
+            <p class="text-[10px] text-gray-500 max-w-xl mx-auto italic uppercase">Nespresso® y Dolce Gusto® son marcas de terceros. La Filomena no tiene vinculación con Nestlé S.A.</p>
         </div>
     </footer>
 
