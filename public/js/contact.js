@@ -1,4 +1,4 @@
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyJAsIpUt5oKnFJUZJePE_m-hJ9WgqrJNehgZBok0oURhV3GZyPh3lCvY_ExnCB5yAJmA/exec'; 
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzn8uLQ3tTmjxoKM55vWQ5uVvu_k3asXgOPzS1yRqZwRQX5DTE9IBLNg5VEqc_B6CBeNw/exec'; 
 
 function handleForm(formId, msgId) {
     const form = document.getElementById(formId);
