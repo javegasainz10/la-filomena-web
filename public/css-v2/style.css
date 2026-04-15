@@ -75,7 +75,7 @@
 
 /* ── 2. Reset ───────────────────────────────────────────── */
 *,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x: hidden; }
 body {
   font-family: var(--font-sans);
   background: var(--espresso);
@@ -370,6 +370,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.15; text-transform:
   padding:.4rem 1.5rem; margin-bottom:var(--space-lg);
   border-radius:var(--radius-full);
   animation:hero-fade-in 1s var(--ease-out) .3s both;
+  white-space: nowrap;
 }
 
 .hero h1 {
@@ -425,15 +426,15 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.15; text-transform:
 }
 .section-white {
   background:var(--white); color:var(--espresso);
-  padding:var(--section-py) 0;
+  padding:var(--section-py) 0; overflow:hidden;
 }
 .section-dark {
   background:var(--espresso); color:var(--white);
-  padding:var(--section-py) 0; position:relative;
+  padding:var(--section-py) 0; position:relative; overflow:hidden;
 }
 .section-dark-alt {
   background:var(--espresso-light); color:var(--white);
-  padding:var(--section-py) 0;
+  padding:var(--section-py) 0; overflow:hidden;
 }
 
 .section-decoration {
