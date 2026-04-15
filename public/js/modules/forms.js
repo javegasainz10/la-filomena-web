@@ -1,0 +1,52 @@
+// ══════════════════════════════════════════════════════════
+// FORMS MODULE
+// ══════════════════════════════════════════════════════════
+
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzn8uLQ3tTmjxoKM55vWQ5uVvu_k3asXgOPzS1yRqZwRQX5DTE9IBLNg5VEqc_B6CBeNw/exec';
+
+export function initForms() {
+  handleForm('b2cForm', 'msgB2C');
+  handleForm('b2bForm', 'msgB2B');
+}
+
+function handleForm(formId, msgId) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const msg = document.getElementById(msgId);
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.innerText;
+
+    btn.innerText = "PROCESANDO...";
+    btn.disabled = true;
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+    data.tipo = formId === 'b2cForm' ? 'Suscripción B2C' : 'Empresa B2B';
+
+    fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(() => {
+        msg.innerText = "¡Gracias! Nos pondremos en contacto pronto.";
+        msg.classList.remove('hidden', 'error');
+        msg.classList.add('success');
+        form.reset();
+      })
+      .catch(() => {
+        msg.innerText = "Hubo un error. Por favor, contactanos por WhatsApp.";
+        msg.classList.remove('hidden', 'success');
+        msg.classList.add('error');
+      })
+      .finally(() => {
+        btn.innerText = originalText;
+        btn.disabled = false;
+        setTimeout(() => { msg.classList.add('hidden'); }, 6000);
+      });
+  });
+}
