@@ -158,24 +158,48 @@ function renderProducts() {
              tabindex="0"
              aria-label="${p.name} — ${formatPrice(p.price)}"
              style="animation-delay:${Math.min(i * 40, 600)}ms;">
-      <div class="product-card__img-wrap">
-        <img src="${p.image}" 
-             alt="${p.name} — ${p.type}" 
-             class="product-card__img" 
-             loading="lazy" 
-             width="150" height="150">
-      </div>
-      <div class="product-card__body">
-        <div class="product-card__brand">${p.brand}</div>
-        <div class="product-card__name">${p.shortName || p.name}</div>
-        <div class="product-card__origin">📍 ${p.origin} · ${p.weight}</div>
-        ${renderIntensityBar(p.intensity)}
-        <div class="tasting-notes">
-          ${(p.tastingNotes || []).map(n => `<span class="tasting-note">${n}</span>`).join('')}
+      <div class="card-inner">
+        <!-- FRONT -->
+        <div class="card-front">
+          <div class="product-card__img-wrap">
+            <img src="${p.image}" 
+                 alt="${p.name} — ${p.type}" 
+                 class="product-card__img" 
+                 loading="lazy" 
+                 width="150" height="150">
+          </div>
+          <div class="product-card__body">
+            <div class="product-card__brand">${p.brand}</div>
+            <div class="product-card__name">${p.shortName || p.name}</div>
+            <div class="product-card__origin">📍 ${p.origin} · ${p.weight}</div>
+            ${renderIntensityBar(p.intensity)}
+            <div class="tasting-notes">
+              ${(p.tastingNotes || []).map(n => `<span class="tasting-note">${n}</span>`).join('')}
+            </div>
+            <div class="product-card__footer" style="margin-top:var(--space-md);">
+              <span class="product-card__price">${formatPrice(p.price)}</span>
+              <span class="product-card__detail-link">↻ Ver más</span>
+            </div>
+          </div>
         </div>
-        <div class="product-card__footer">
-          <span class="product-card__price">${formatPrice(p.price)}</span>
-          <span class="product-card__detail-link">Ver detalle →</span>
+
+        <!-- BACK -->
+        <div class="card-back">
+          <div class="back-title">${p.name}</div>
+          <div class="back-desc">${p.description || ''}</div>
+          <div class="back-details">
+            <div class="back-detail-item">
+              <span class="back-detail-label">Tueste</span>
+              <span class="back-detail-value">${p.roast || '-'}</span>
+            </div>
+            <div class="back-detail-item">
+              <span class="back-detail-label">Origen</span>
+              <span class="back-detail-value">${p.origin}</span>
+            </div>
+          </div>
+          <div class="tasting-notes" style="margin-top:0;">
+            ${(p.tastingNotes || []).map(n => `<span class="tasting-note" style="border-color:rgba(197,160,89,.3); color:var(--gold);">${n}</span>`).join('')}
+          </div>
         </div>
       </div>
     </article>
@@ -200,7 +224,14 @@ function renderProducts() {
 
   // Add click handlers
   grid.querySelectorAll('.product-card').forEach(card => {
-    const handler = () => openModal(card.dataset.id);
+    const handler = () => {
+      // Toggle flip on mobile, open detailed modal on desktop
+      if (window.innerWidth <= 768) {
+        card.classList.toggle('flipped');
+      } else {
+        openModal(card.dataset.id);
+      }
+    };
     card.addEventListener('click', handler);
     card.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
