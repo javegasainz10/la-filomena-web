@@ -313,7 +313,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.15; text-transform:
 /* ── 8. Hero ────────────────────────────────────────────── */
 .hero {
   position:relative; min-height:100vh; min-height:100dvh;
-  display:flex; align-items:center; justify-content:center;
+  display:flex; flex-direction:column; align-items:center; justify-content:space-between;
   overflow:hidden;
   padding-top:72px; /* Fix for absolute navbar overlap */
 }
@@ -344,7 +344,7 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.15; text-transform:
   position:relative; z-index:2;
   text-align:center; padding:0 var(--space-lg);
   max-width:900px;
-  padding-bottom:5rem; /* space for scroll indicator */
+  margin:auto;
   animation:hero-fade-in 1.2s var(--ease-out) both;
 }
 @keyframes hero-fade-in {
@@ -402,25 +402,20 @@ h1,h2,h3,h4 { font-family:var(--font-display); line-height:1.15; text-transform:
 }
 
 .hero-scroll {
-  position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%);
+  position:relative; z-index:5;
   display:flex; flex-direction:column; align-items:center; gap:.5rem;
   color:rgba(255,255,255,.45); font-size:.65rem;
   text-transform:uppercase; letter-spacing:.15em;
-  z-index:5;
+  margin-bottom:1.5rem;
   animation:hero-bounce 2s infinite;
 }
 .hero-scroll-line { width:1px; height:28px; background:rgba(197,160,89,.5); }
 @keyframes hero-bounce {
-  0%,100% { transform:translateX(-50%) translateY(0); }
-  50%     { transform:translateX(-50%) translateY(8px); }
+  0%,100% { transform:translateY(0); }
+  50%     { transform:translateY(8px); }
 }
 @media(max-width:480px) {
-  .hero-scroll { bottom:1rem; }
-  .hero-content { padding-bottom:4rem; }
-}
-
-@media(max-height: 700px) {
-  .hero-scroll { display: none; }
+  .hero-scroll { margin-bottom:1rem; }
 }
 
 /* ── 9. Sections ────────────────────────────────────────── */
