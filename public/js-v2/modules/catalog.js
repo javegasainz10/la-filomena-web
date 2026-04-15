@@ -182,18 +182,19 @@ function renderProducts() {
   `).join('');
 
   // Animate cards in smoothly
+  const cards = grid.querySelectorAll('.product-card');
+  if (!cards.length) return;
+
   requestAnimationFrame(() => {
-    grid.querySelectorAll('.product-card').forEach((card, i) => {
+    cards.forEach((card, i) => {
       card.style.opacity = '0';
       card.style.transform = 'translateY(15px)';
-      // Optimize animation loop
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-          card.style.opacity = '1';
-          card.style.transform = 'translateY(0)';
-        }, Math.min(i * 40, 400));
-      });
+      card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+      
+      setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, Math.min(i * 40, 400) + 16);
     });
   });
 

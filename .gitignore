@@ -69,6 +69,6 @@ node_modules/
 .dataconnect
 
 # System and Agent Files
+**/.DS_Store
 .DS_Store
 .agent/
-optimize.py
